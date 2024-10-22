@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATE_NAGER_API_URL=https://date.nager.at
+      - COUNTRIES_NOW_API_URL=https://countriesnow.space
+    volumes:
+      - .:/app
+      - /app/node_modules
